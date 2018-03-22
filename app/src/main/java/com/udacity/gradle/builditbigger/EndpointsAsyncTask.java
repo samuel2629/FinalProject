@@ -15,7 +15,7 @@ import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.silho.ideo.myandroidjokeslib.JokeActivity;
-import com.udacity.gradle.builditbigger.backend.MyBean;
+import com.udacity.gradle.builditbigger.backend.JokeBean;
 
 import java.io.IOException;
 
@@ -45,23 +45,24 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
-        if (mJokeApi == null) {
-            JokeApi.Builder builder = new JokeApi.Builder(AndroidHttp.newCompatibleTransport(),
-                    new AndroidJsonFactory(), null)
-                    .setRootUrl("https://backend.builditbigger.gradle.udacity.com")
-                    .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
-                        @Override
-                        public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
-                            request.setDisableGZipContent(true);
-                        }
-                    });
-            mJokeApi = builder.build();
-        }
-        try {
-            return mJokeApi.putJoke(new MyBean()).execute().getData();
-        } catch (IOException e) {
-            return e.getMessage();
-        }
+//        if (mJokeApi == null) {
+//            JokeApi.Builder builder = new JokeApi.Builder(AndroidHttp.newCompatibleTransport(),
+//                    new AndroidJsonFactory(), null)
+//                    .setRootUrl("https://backend.builditbigger.gradle.udacity.com")
+//                    .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
+//                        @Override
+//                        public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
+//                            request.setDisableGZipContent(true);
+//                        }
+//                    });
+//            mJokeApi = builder.build();
+//        }
+//        try {
+//            return mJokeApi.putJoke(new JokeBean()).execute().getData();
+//        } catch (IOException e) {
+//            return e.getMessage();
+//        }
+        return "";
     }
 
     @Override

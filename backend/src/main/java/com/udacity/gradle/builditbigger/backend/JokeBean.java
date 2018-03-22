@@ -3,12 +3,12 @@ package com.udacity.gradle.builditbigger.backend;
 import com.silho.ideo.jokeslib.Joke;
 
 /** The object model for the data we are sending through endpoints */
-public class MyBean {
+public class JokeBean {
 
     private Joke myData;
-    private MyBean mData;
+    private JokeBean mData;
 
-    public MyBean(){
+    public JokeBean(){
         myData = new Joke();
     }
 
@@ -16,7 +16,7 @@ public class MyBean {
         return myData.getRandomJoke();
     }
 
-    public void setData(MyBean data) {
+    public void setData(JokeBean data) {
         mData = data;
     }
 }
