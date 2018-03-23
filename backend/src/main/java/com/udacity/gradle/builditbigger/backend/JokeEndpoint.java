@@ -11,7 +11,7 @@ import com.google.api.server.spi.config.ApiNamespace;
         ownerName = "backend.builditbigger.gradle.udacity.com",
         packagePath = ""
 ))
-public class MyEndpoint {
+public class JokeEndpoint {
 
     /** A simple endpoint method that takes a name and says Hi back */
     @ApiMethod(name = "putJoke")
