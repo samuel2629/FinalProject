@@ -14,6 +14,7 @@ import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+import com.silho.ideo.myandroidjokeslib.JokeActivity;
 import com.udacity.gradle.builditbigger.backend.jokeApi.JokeApi;
 import com.udacity.gradle.builditbigger.backend.jokeApi.model.JokeBean;
 
@@ -46,15 +47,8 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
         if (mJokeApi == null) {
-            JokeApi.Builder builder = new JokeApi.Builder(AndroidHttp.newCompatibleTransport(),
-                    new AndroidJsonFactory(), null)
-                    .setRootUrl("https://backend.builditbigger.gradle.udacity.com")
-                    .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
-                        @Override
-                        public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
-                            request.setDisableGZipContent(true);
-                        }
-                    });
+            JokeApi.Builder builder = new JokeApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
+                    .setRootUrl("https://final-project-199019.appspot.com/_ah/api/");
             mJokeApi = builder.build();
         }
         try {
@@ -104,10 +98,10 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     }
 
     private void startJokeDisplayActivity() {
-//        Intent intent = new Intent(mContext, JokeActivity.class);
-//        intent.putExtra(JokeActivity.INTENT_JOKE, mResult);
-//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        mContext.startActivity(intent);
+        Intent intent = new Intent(mContext, JokeActivity.class);
+        intent.putExtra(JokeActivity.INTENT_JOKE, mResult);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mContext.startActivity(intent);
     }
 
 }

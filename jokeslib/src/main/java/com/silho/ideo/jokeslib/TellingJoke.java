@@ -2,16 +2,16 @@ package com.silho.ideo.jokeslib;
 
 import java.util.Random;
 
-public class Joke {
+public class TellingJoke {
 
     private String[] jokes;
     private Random random;
 
-    public Joke() {
+    public TellingJoke() {
         jokes = new String[3];
-        jokes[0] = "A SQL query goes into a bar, walks up to two tables and asks, \"Can I join you?\"";
-        jokes[1] = "Q: How many prolog programmers does it take to change a lightbulb? A: Yes.";
-        jokes[2] = "Why do Java developers wear glasses? Because they can't C#";
+        jokes[0] = "Tu connais l'histoire a 2 balles ? Pan Pan";
+        jokes[1] = "Comment fait un zoophile pour sauter ? Il prend son elan";
+        jokes[2] = "C'est l'histoire du chien Paf qui traverse, et paf le chien.";
         random = new Random();
     }
 

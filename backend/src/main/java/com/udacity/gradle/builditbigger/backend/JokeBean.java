@@ -1,15 +1,15 @@
 package com.udacity.gradle.builditbigger.backend;
 
-import com.silho.ideo.jokeslib.Joke;
+import com.silho.ideo.jokeslib.TellingJoke;
 
 /** The object model for the data we are sending through endpoints */
 public class JokeBean {
 
-    private Joke myData;
+    private TellingJoke myData;
     private JokeBean mData;
 
     public JokeBean(){
-        myData = new Joke();
+        myData = new TellingJoke();
     }
 
     public String getData() {

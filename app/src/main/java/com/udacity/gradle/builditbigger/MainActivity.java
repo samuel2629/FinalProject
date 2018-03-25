@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mProgressBar = findViewById(R.id.progressBar);
+        mProgressBar.setVisibility(View.GONE);
     }
 
 
